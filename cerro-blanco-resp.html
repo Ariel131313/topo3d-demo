@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cerro Blanco - Escalada en San Juan (Responsive)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    /* -----------------------
+       Estilos generales
+    ------------------------ */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      font-size: 16px;       /* Tamaño base de la fuente */
+      line-height: 1.5;      /* Altura de línea para mejor legibilidad */
+    }
+
+    /* Encabezado */
+    header {
+      background-color: #0c3c60;
+      color: #fff;
+      padding: 1rem;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+
+    /* Contenedor principal: menú a la izquierda, contenido a la derecha */
+    .container {
+      display: flex;
+      flex-direction: row;
+    }
+
+    /* Barra lateral (nav) */
+    nav {
+      width: 220px;
+      background-color: #ffffff;
+      border-right: 1px solid #ddd;
+      padding: 1rem;
+    }
+
+    nav h2 {
+      margin-top: 0;
+      font-size: 1.2rem;
+      color: #0c3c60;
+    }
+
+    nav ul {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 1rem;
+    }
+
+    nav li {
+      margin-bottom: 0.5rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #333;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* Sección de contenido principal */
+    main {
+      flex: 1;
+      padding: 1rem;
+      background-color: #fff;
+    }
+
+    main h2 {
+      color: #0c3c60;
+      margin-top: 0;
+      font-size: 1.3rem;
+    }
+
+    .intro-text {
+      margin-bottom: 1rem;
+    }
+
+    /* Para las secciones de imágenes */
+    .images-section {
+      display: flex;
+      flex-direction: column; /* Apilar una sobre la otra */
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    /* IMPORTANTE: Para que las fotos sean responsivas */
+    .images-section img,
+    .los-desplomes img {
+      max-width: 100%;   /* No sobrepasa el ancho del contenedor */
+      height: auto;      /* Mantiene proporción */
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      display: block;    /* Para eliminar espacio debajo de imágenes inline */
+    }
+
+    .los-desplomes {
+      margin-top: 2rem;
+    }
+
+    /* Contenedor para el modelo 3D */
+    .topo3d-container {
+      margin-top: 2rem;
+      background-color: #efefef;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 1rem;
+    }
+
+    .topo3d-container h3 {
+      margin-top: 0;
+      font-size: 1.2rem;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      padding: 1rem;
+      border-top: 1px solid #ddd;
+      background-color: #fff;
+    }
+
+    /* Ajustar la apariencia del contenedor de Sketchfab */
+    .sketchfab-embed-wrapper {
+      margin-top: 1rem;
+      position: relative;
+      width: 100%;
+      min-height: 480px; /* Ajusta si quieres más alto o más bajo */
+      border: none;
+      border-radius: 4px;
+      overflow: hidden;
+      background-color: #333;
+    }
+
+    .sketchfab-embed-wrapper iframe {
+      width: 100%;
+      height: 480px; /* Ajustar la altura según prefieras */
+      border: none;
+    }
+
+    .sketchfab-embed-wrapper p {
+      font-size: 13px;
+      font-weight: normal;
+      margin: 5px;
+      color: #4A4A4A;
+    }
+
+    /* ---------------------------
+       MEDIA QUERY para pantallas
+       de 768px de ancho o menos
+    ---------------------------- */
+    @media (max-width: 768px) {
+      /* Aumentamos un poco el tamaño base de la fuente en móviles */
+      body {
+        font-size: 18px;
+      }
+
+      header h1 {
+        font-size: 1.8rem; /* Más grande en móviles */
+      }
+
+      .container {
+        flex-direction: column; 
+      }
+
+      nav {
+        width: 100%;           /* El menú ocupa todo el ancho */
+        border-right: none;    /* Quitamos la línea vertical */
+        border-bottom: 1px solid #ddd;
+      }
+
+      nav h2 {
+        font-size: 1.4rem;
+      }
+
+      main {
+        padding: 1rem;
+      }
+
+      main h2 {
+        font-size: 1.5rem;
+      }
+
+      /* Si quieres cambiar la altura del visor 3D en móvil, descomenta y ajusta:
+         .sketchfab-embed-wrapper iframe {
+             height: 350px;
+         }
+      */
+    }
+  </style>
+</head>
+<body>
+  <!-- ENCABEZADO -->
+  <header>
+    <h1>Escalada en San Juan - Cerro Blanco</h1>
+  </header>
+
+  <div class="container">
+    <!-- MENÚ LATERAL -->
+    <nav>
+      <h2>Sectores</h2>
+      <ul>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">San Juan, Ciudad y Alrededores</a></li>
+        <li><a href="#">Cerro Blanco</a></li>
+        <li><a href="#">Cuesta de las Vacas</a></li>
+        <li><a href="#">Pachaco</a></li>
+        <li><a href="#">Ruta 40 Sur</a></li>
+        <li><a href="#">Barreal</a></li>
+        <li><a href="#">Sierra de la Huerta</a></li>
+        <li><a href="#">[Otros sectores...]</a></li>
+      </ul>
+    </nav>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main>
+      <h2>Cerro Blanco</h2>
+
+      <!-- Introducción -->
+      <div class="intro-text">
+        <p>
+          La zona de Cerro Blanco se encuentra en el piedemonte cercano a la Ciudad de San Juan, 
+          aproximadamente a 40 km del centro. Se accede principalmente por Calle 11 hacia el oeste, 
+          donde se divisan formaciones rocosas de excelente calidad para la práctica de la escalada.
+        </p>
+        <p>
+          Este sector ha sido continuamente desarrollado por la comunidad escaladora local, 
+          ofreciendo vías de diversos grados y características. La roca compacta y la cercanía 
+          a la ciudad lo convierten en uno de los destinos más frecuentados tanto por principiantes 
+          como por escaladores con mayor experiencia.
+        </p>
+      </div>
+
+      <!-- Dos primeras fotos generales (apiladas verticalmente) -->
+      <div class="images-section">
+        <!-- FOTO 1 -->
+        <img 
+          src="images/Cerro%20Blanco%20Placas%20Negras%20Sectores.png"
+          alt="Vista general de Cerro Blanco 1"
+        />
+
+        <!-- FOTO 2 -->
+        <img
+          src="images/Cerro%20Blanco%20Qda%20de%20la%20teta%201.png"
+          alt="Vista general de Cerro Blanco 2"
+        />
+      </div>
+
+      <!-- Sector Los Desplomes -->
+      <div class="los-desplomes">
+        <h3>Sector: Los Desplomes</h3>
+        <img 
+          src="images/Sectores%20CBlanco.png"
+          alt="Los Desplomes en Cerro Blanco"
+        />
+      </div>
+
+      <!-- Topo 3D de Sketchfab -->
+      <div class="topo3d-container">
+        <h3>Topo 3D de Los Desplomes</h3>
+        <div class="sketchfab-embed-wrapper">
+          <iframe 
+            title="desplomoniado 01 ANSILTA rutas" 
+            frameborder="0"
+            allowfullscreen
+            mozallowfullscreen="true"
+            webkitallowfullscreen="true"
+            allow="autoplay; fullscreen; xr-spatial-tracking"
+            xr-spatial-tracking
+            execution-while-out-of-viewport
+            execution-while-not-rendered
+            web-share
+            src="https://sketchfab.com/models/78699833fb48480c90a74870e53da5a3/embed"
+          >
+          </iframe>
+          <p>
+            <a 
+              href="https://sketchfab.com/3d-models/desplomoniado-01-ansilta-rutas-78699833fb48480c90a74870e53da5a3?utm_medium=embed&utm_campaign=share-popup&utm_content=78699833fb48480c90a74870e53da5a3"
+              target="_blank"
+              rel="nofollow"
+              style="font-weight: bold; color: #1CAAD9;"
+            >
+              desplomoniado 01 ANSILTA rutas
+            </a>
+            by
+            <a 
+              href="https://sketchfab.com/caminante13?utm_medium=embed&utm_campaign=share-popup&utm_content=78699833fb48480c90a74870e53da5a3"
+              target="_blank"
+              rel="nofollow"
+              style="font-weight: bold; color: #1CAAD9;"
+            >
+              caminante13
+            </a>
+            on
+            <a 
+              href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=78699833fb48480c90a74870e53da5a3"
+              target="_blank"
+              rel="nofollow"
+              style="font-weight: bold; color: #1CAAD9;"
+            >
+              Sketchfab
+            </a>
+          </p>
+        </div>
+        <p style="margin-top: 1rem;">
+          Explora la pared en 3D, observa las rutas y los detalles de la zona de forma interactiva.
+        </p>
+      </div>
+
+    </main>
+  </div>
+
+  <footer>
+    <p>© 2025 - Escalada en San Juan</p>
+  </footer>
+</body>
+</html>
